@@ -1,6 +1,6 @@
 <?php
 
-namespace Myna65\ElixirRelationsBundle\Entity;
+namespace Myna65\ElixirBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -31,7 +31,6 @@ class Contact
     /**
      * @var \ContactType
      *
-     * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
      * @ORM\OneToOne(targetEntity="ContactType")
      * @ORM\JoinColumns({
