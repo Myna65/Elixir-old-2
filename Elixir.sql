@@ -15,7 +15,7 @@ USE `elixir` ;
 -- Table `elixir`.`civility`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `elixir`.`civility` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `name_UNIQUE` (`name` ASC))
@@ -26,7 +26,7 @@ ENGINE = InnoDB;
 -- Table `elixir`.`person`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `elixir`.`person` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `surname` VARCHAR(45) NULL DEFAULT '',
   `vat_number` VARCHAR(20) NULL DEFAULT NULL,
@@ -75,7 +75,7 @@ ENGINE = InnoDB;
 -- Table `elixir`.`person`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `elixir`.`person` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `surname` VARCHAR(45) NULL DEFAULT '',
   `vat_number` VARCHAR(20) NULL DEFAULT NULL,
@@ -104,7 +104,7 @@ ENGINE = InnoDB;
 -- Table `elixir`.`contact_type`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `elixir`.`contact_type` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `name_UNIQUE` (`name` ASC))
@@ -115,7 +115,7 @@ ENGINE = InnoDB;
 -- Table `elixir`.`contact`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `elixir`.`contact` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `value` VARCHAR(45) NOT NULL,
   `contact_type_id` INT NOT NULL,
   `person_id` INT NOT NULL,
@@ -139,7 +139,7 @@ ENGINE = InnoDB;
 -- Table `elixir`.`land`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `elixir`.`land` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `code` VARCHAR(2) NOT NULL,
   PRIMARY KEY (`id`),
@@ -152,7 +152,7 @@ ENGINE = InnoDB;
 -- Table `elixir`.`zip`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `elixir`.`zip` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `number` VARCHAR(45) NOT NULL,
   `land_id` INT NOT NULL,
   PRIMARY KEY (`id`),
@@ -169,7 +169,7 @@ ENGINE = InnoDB;
 -- Table `elixir`.`city`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `elixir`.`city` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `zip_id` INT NOT NULL,
   PRIMARY KEY (`id`),
@@ -186,7 +186,7 @@ ENGINE = InnoDB;
 -- Table `elixir`.`address`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `elixir`.`address` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `street` VARCHAR(45) NULL,
   `number` VARCHAR(45) NULL,
   `box` VARCHAR(45) NULL,
@@ -212,7 +212,7 @@ ENGINE = InnoDB;
 -- Table `elixir`.`bank`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `elixir`.`bank` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `BIC` VARCHAR(11) NOT NULL,
   `person_id` INT NOT NULL,
   PRIMARY KEY (`id`),
@@ -229,7 +229,7 @@ ENGINE = InnoDB;
 -- Table `elixir`.`account`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `elixir`.`account` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `IBAN` VARCHAR(34) NOT NULL,
   `bank_id` INT NOT NULL,
   `person_id` INT NOT NULL,
@@ -253,7 +253,7 @@ ENGINE = InnoDB;
 -- Table `elixir`.`journal`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `elixir`.`journal` (
-  `id` INT UNSIGNED NOT NULL,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `type` ENUM('cash','electronic','check') NOT NULL,
   `current_amount` DECIMAL NOT NULL,
   PRIMARY KEY (`id`))
@@ -264,7 +264,7 @@ ENGINE = InnoDB;
 -- Table `elixir`.`document`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `elixir`.`document` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `time` TIMESTAMP NOT NULL,
   `term_time` DATE NULL,
   `amount` DECIMAL NOT NULL,
@@ -312,7 +312,7 @@ ENGINE = InnoDB;
 -- Table `elixir`.`transfer`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `elixir`.`transfer` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `from_id` INT UNSIGNED NOT NULL,
   `to_id` INT UNSIGNED NOT NULL,
   `amount` DECIMAL NOT NULL,
@@ -338,7 +338,7 @@ ENGINE = InnoDB;
 -- Table `elixir`.`product_category`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `elixir`.`product_category` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `value` VARCHAR(45) NOT NULL,
   `parent_id` INT NOT NULL,
   PRIMARY KEY (`id`),
@@ -355,7 +355,7 @@ ENGINE = InnoDB;
 -- Table `elixir`.`collection`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `elixir`.`collection` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT, 
   `year` SMALLINT NOT NULL,
   `season` ENUM('spring','summer','automn','winter') NOT NULL,
   PRIMARY KEY (`id`))
@@ -366,7 +366,7 @@ ENGINE = InnoDB;
 -- Table `elixir`.`product`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `elixir`.`product` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `model` VARCHAR(45) NOT NULL,
   `article` VARCHAR(45) NOT NULL,
   `size` VARCHAR(45) NOT NULL,
@@ -401,7 +401,7 @@ ENGINE = InnoDB;
 -- Table `elixir`.`stock`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `elixir`.`stock` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `product_id` INT NOT NULL,
   `receive_date` DATE NOT NULL,
   `person_id` INT NOT NULL,
@@ -427,7 +427,7 @@ ENGINE = InnoDB;
 -- Table `elixir`.`permission`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `elixir`.`permission` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `role` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `role_UNIQUE` (`role` ASC))
@@ -460,7 +460,7 @@ ENGINE = InnoDB;
 -- Table `elixir`.`move`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `elixir`.`move` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `time` TIMESTAMP NOT NULL,
   `internal_ref` VARCHAR(45) NULL,
   `extrenal_ref` VARCHAR(45) NULL,
@@ -518,7 +518,7 @@ ENGINE = InnoDB;
 -- Table `elixir`.`voucher`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `elixir`.`voucher` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `amount` DECIMAL NULL,
   `number` INT(11) NOT NULL,
   `ticket_intro_id` INT NOT NULL,
@@ -543,7 +543,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `elixir`.`Printer`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `elixir`.`Printer` (
+CREATE TABLE IF NOT EXISTS `elixir`.`printer` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
   `type` ENUM('ticket','paper') NULL,

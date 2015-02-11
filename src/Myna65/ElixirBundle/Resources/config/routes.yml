@@ -1,0 +1,5 @@
+myna65_elixir_person:
+    type: rest
+    prefix: /v1
+    resource: "Myna65\\ElixirBundle\\Controller\\PersonController"
+    name_prefix: api_1_

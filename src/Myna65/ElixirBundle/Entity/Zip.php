@@ -39,4 +39,60 @@ class Zip
     private $land;
 
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set number
+     *
+     * @param string $number
+     * @return Zip
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
+
+        return $this;
+    }
+
+    /**
+     * Get number
+     *
+     * @return string 
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
+
+    /**
+     * Set land
+     *
+     * @param \Myna65\ElixirBundle\Entity\Land $land
+     * @return Zip
+     */
+    public function setLand(\Myna65\ElixirBundle\Entity\Land $land = null)
+    {
+        $this->land = $land;
+
+        return $this;
+    }
+
+    /**
+     * Get land
+     *
+     * @return \Myna65\ElixirBundle\Entity\Land 
+     */
+    public function getLand()
+    {
+        return $this->land;
+    }
 }

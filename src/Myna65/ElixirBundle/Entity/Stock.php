@@ -77,4 +77,162 @@ class Stock
         $this->move = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set receiveDate
+     *
+     * @param \DateTime $receiveDate
+     * @return Stock
+     */
+    public function setReceiveDate($receiveDate)
+    {
+        $this->receiveDate = $receiveDate;
+
+        return $this;
+    }
+
+    /**
+     * Get receiveDate
+     *
+     * @return \DateTime 
+     */
+    public function getReceiveDate()
+    {
+        return $this->receiveDate;
+    }
+
+    /**
+     * Set costPrice
+     *
+     * @param string $costPrice
+     * @return Stock
+     */
+    public function setCostPrice($costPrice)
+    {
+        $this->costPrice = $costPrice;
+
+        return $this;
+    }
+
+    /**
+     * Get costPrice
+     *
+     * @return string 
+     */
+    public function getCostPrice()
+    {
+        return $this->costPrice;
+    }
+
+    /**
+     * Set quantity
+     *
+     * @param integer $quantity
+     * @return Stock
+     */
+    public function setQuantity($quantity)
+    {
+        $this->quantity = $quantity;
+
+        return $this;
+    }
+
+    /**
+     * Get quantity
+     *
+     * @return integer 
+     */
+    public function getQuantity()
+    {
+        return $this->quantity;
+    }
+
+    /**
+     * Set product
+     *
+     * @param \Myna65\ElixirBundle\Entity\Product $product
+     * @return Stock
+     */
+    public function setProduct(\Myna65\ElixirBundle\Entity\Product $product = null)
+    {
+        $this->product = $product;
+
+        return $this;
+    }
+
+    /**
+     * Get product
+     *
+     * @return \Myna65\ElixirBundle\Entity\Product 
+     */
+    public function getProduct()
+    {
+        return $this->product;
+    }
+
+    /**
+     * Set person
+     *
+     * @param \Myna65\ElixirBundle\Entity\Person $person
+     * @return Stock
+     */
+    public function setPerson(\Myna65\ElixirBundle\Entity\Person $person = null)
+    {
+        $this->person = $person;
+
+        return $this;
+    }
+
+    /**
+     * Get person
+     *
+     * @return \Myna65\ElixirBundle\Entity\Person 
+     */
+    public function getPerson()
+    {
+        return $this->person;
+    }
+
+    /**
+     * Add move
+     *
+     * @param \Myna65\ElixirBundle\Entity\Move $move
+     * @return Stock
+     */
+    public function addMove(\Myna65\ElixirBundle\Entity\Move $move)
+    {
+        $this->move[] = $move;
+
+        return $this;
+    }
+
+    /**
+     * Remove move
+     *
+     * @param \Myna65\ElixirBundle\Entity\Move $move
+     */
+    public function removeMove(\Myna65\ElixirBundle\Entity\Move $move)
+    {
+        $this->move->removeElement($move);
+    }
+
+    /**
+     * Get move
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMove()
+    {
+        return $this->move;
+    }
 }

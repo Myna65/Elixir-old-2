@@ -39,4 +39,60 @@ class ProductCategory
     private $parent;
 
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set value
+     *
+     * @param string $value
+     * @return ProductCategory
+     */
+    public function setValue($value)
+    {
+        $this->value = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get value
+     *
+     * @return string 
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * Set parent
+     *
+     * @param \Myna65\ElixirBundle\Entity\ProductCategory $parent
+     * @return ProductCategory
+     */
+    public function setParent(\Myna65\ElixirBundle\Entity\ProductCategory $parent = null)
+    {
+        $this->parent = $parent;
+
+        return $this;
+    }
+
+    /**
+     * Get parent
+     *
+     * @return \Myna65\ElixirBundle\Entity\ProductCategory 
+     */
+    public function getParent()
+    {
+        return $this->parent;
+    }
 }

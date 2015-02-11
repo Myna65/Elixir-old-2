@@ -39,4 +39,60 @@ class City
     private $zip;
 
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return City
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set zip
+     *
+     * @param \Myna65\ElixirBundle\Entity\Zip $zip
+     * @return City
+     */
+    public function setZip(\Myna65\ElixirBundle\Entity\Zip $zip = null)
+    {
+        $this->zip = $zip;
+
+        return $this;
+    }
+
+    /**
+     * Get zip
+     *
+     * @return \Myna65\ElixirBundle\Entity\Zip 
+     */
+    public function getZip()
+    {
+        return $this->zip;
+    }
 }

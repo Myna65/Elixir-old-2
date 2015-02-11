@@ -50,4 +50,96 @@ class Contact
     private $person;
 
 
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     * @return Contact
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set value
+     *
+     * @param string $value
+     * @return Contact
+     */
+    public function setValue($value)
+    {
+        $this->value = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get value
+     *
+     * @return string 
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * Set contactType
+     *
+     * @param \Myna65\ElixirBundle\Entity\ContactType $contactType
+     * @return Contact
+     */
+    public function setContactType(\Myna65\ElixirBundle\Entity\ContactType $contactType = null)
+    {
+        $this->contactType = $contactType;
+
+        return $this;
+    }
+
+    /**
+     * Get contactType
+     *
+     * @return \Myna65\ElixirBundle\Entity\ContactType 
+     */
+    public function getContactType()
+    {
+        return $this->contactType;
+    }
+
+    /**
+     * Set person
+     *
+     * @param \Myna65\ElixirBundle\Entity\Person $person
+     * @return Contact
+     */
+    public function setPerson(\Myna65\ElixirBundle\Entity\Person $person = null)
+    {
+        $this->person = $person;
+
+        return $this;
+    }
+
+    /**
+     * Get person
+     *
+     * @return \Myna65\ElixirBundle\Entity\Person 
+     */
+    public function getPerson()
+    {
+        return $this->person;
+    }
 }

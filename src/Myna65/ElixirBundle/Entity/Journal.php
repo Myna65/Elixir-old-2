@@ -36,4 +36,60 @@ class Journal
     private $currentAmount;
 
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     * @return Journal
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string 
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Set currentAmount
+     *
+     * @param string $currentAmount
+     * @return Journal
+     */
+    public function setCurrentAmount($currentAmount)
+    {
+        $this->currentAmount = $currentAmount;
+
+        return $this;
+    }
+
+    /**
+     * Get currentAmount
+     *
+     * @return string 
+     */
+    public function getCurrentAmount()
+    {
+        return $this->currentAmount;
+    }
 }

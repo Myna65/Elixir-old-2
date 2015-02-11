@@ -56,4 +56,106 @@ class Voucher
     private $ticketOut;
 
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set amount
+     *
+     * @param string $amount
+     * @return Voucher
+     */
+    public function setAmount($amount)
+    {
+        $this->amount = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Get amount
+     *
+     * @return string 
+     */
+    public function getAmount()
+    {
+        return $this->amount;
+    }
+
+    /**
+     * Set number
+     *
+     * @param integer $number
+     * @return Voucher
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
+
+        return $this;
+    }
+
+    /**
+     * Get number
+     *
+     * @return integer 
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
+
+    /**
+     * Set ticketIntro
+     *
+     * @param \Myna65\ElixirBundle\Entity\Document $ticketIntro
+     * @return Voucher
+     */
+    public function setTicketIntro(\Myna65\ElixirBundle\Entity\Document $ticketIntro = null)
+    {
+        $this->ticketIntro = $ticketIntro;
+
+        return $this;
+    }
+
+    /**
+     * Get ticketIntro
+     *
+     * @return \Myna65\ElixirBundle\Entity\Document 
+     */
+    public function getTicketIntro()
+    {
+        return $this->ticketIntro;
+    }
+
+    /**
+     * Set ticketOut
+     *
+     * @param \Myna65\ElixirBundle\Entity\Document $ticketOut
+     * @return Voucher
+     */
+    public function setTicketOut(\Myna65\ElixirBundle\Entity\Document $ticketOut = null)
+    {
+        $this->ticketOut = $ticketOut;
+
+        return $this;
+    }
+
+    /**
+     * Get ticketOut
+     *
+     * @return \Myna65\ElixirBundle\Entity\Document 
+     */
+    public function getTicketOut()
+    {
+        return $this->ticketOut;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Myna65\\ElixirBundle\\Entity;
+namespace Myna65\ElixirBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -39,4 +39,60 @@ class Bank
     private $person;
 
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set bic
+     *
+     * @param string $bic
+     * @return Bank
+     */
+    public function setBic($bic)
+    {
+        $this->bic = $bic;
+
+        return $this;
+    }
+
+    /**
+     * Get bic
+     *
+     * @return string 
+     */
+    public function getBic()
+    {
+        return $this->bic;
+    }
+
+    /**
+     * Set person
+     *
+     * @param \Myna65\ElixirBundle\Entity\Person $person
+     * @return Bank
+     */
+    public function setPerson(\Myna65\ElixirBundle\Entity\Person $person = null)
+    {
+        $this->person = $person;
+
+        return $this;
+    }
+
+    /**
+     * Get person
+     *
+     * @return \Myna65\ElixirBundle\Entity\Person 
+     */
+    public function getPerson()
+    {
+        return $this->person;
+    }
 }

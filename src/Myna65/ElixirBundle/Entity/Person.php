@@ -70,4 +70,152 @@ class Person
     private $mandator;
 
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Person
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set surname
+     *
+     * @param string $surname
+     * @return Person
+     */
+    public function setSurname($surname)
+    {
+        $this->surname = $surname;
+
+        return $this;
+    }
+
+    /**
+     * Get surname
+     *
+     * @return string 
+     */
+    public function getSurname()
+    {
+        return $this->surname;
+    }
+
+    /**
+     * Set vatNumber
+     *
+     * @param string $vatNumber
+     * @return Person
+     */
+    public function setVatNumber($vatNumber)
+    {
+        $this->vatNumber = $vatNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get vatNumber
+     *
+     * @return string 
+     */
+    public function getVatNumber()
+    {
+        return $this->vatNumber;
+    }
+
+    /**
+     * Set comment
+     *
+     * @param string $comment
+     * @return Person
+     */
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Get comment
+     *
+     * @return string 
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+    /**
+     * Set civility
+     *
+     * @param \Myna65\ElixirBundle\Entity\Civility $civility
+     * @return Person
+     */
+    public function setCivility(\Myna65\ElixirBundle\Entity\Civility $civility = null)
+    {
+        $this->civility = $civility;
+
+        return $this;
+    }
+
+    /**
+     * Get civility
+     *
+     * @return \Myna65\ElixirBundle\Entity\Civility 
+     */
+    public function getCivility()
+    {
+        return $this->civility;
+    }
+
+    /**
+     * Set mandator
+     *
+     * @param \Myna65\ElixirBundle\Entity\Person $mandator
+     * @return Person
+     */
+    public function setMandator(\Myna65\ElixirBundle\Entity\Person $mandator = null)
+    {
+        $this->mandator = $mandator;
+
+        return $this;
+    }
+
+    /**
+     * Get mandator
+     *
+     * @return \Myna65\ElixirBundle\Entity\Person 
+     */
+    public function getMandator()
+    {
+        return $this->mandator;
+    }
 }

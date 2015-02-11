@@ -68,4 +68,116 @@ class Credential
         $this->permission = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set username
+     *
+     * @param string $username
+     * @return Credential
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * Get username
+     *
+     * @return string 
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * Set password
+     *
+     * @param string $password
+     * @return Credential
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get password
+     *
+     * @return string 
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * Set person
+     *
+     * @param \Myna65\ElixirBundle\Entity\Person $person
+     * @return Credential
+     */
+    public function setPerson(\Myna65\ElixirBundle\Entity\Person $person = null)
+    {
+        $this->person = $person;
+
+        return $this;
+    }
+
+    /**
+     * Get person
+     *
+     * @return \Myna65\ElixirBundle\Entity\Person 
+     */
+    public function getPerson()
+    {
+        return $this->person;
+    }
+
+    /**
+     * Add permission
+     *
+     * @param \Myna65\ElixirBundle\Entity\Permission $permission
+     * @return Credential
+     */
+    public function addPermission(\Myna65\ElixirBundle\Entity\Permission $permission)
+    {
+        $this->permission[] = $permission;
+
+        return $this;
+    }
+
+    /**
+     * Remove permission
+     *
+     * @param \Myna65\ElixirBundle\Entity\Permission $permission
+     */
+    public function removePermission(\Myna65\ElixirBundle\Entity\Permission $permission)
+    {
+        $this->permission->removeElement($permission);
+    }
+
+    /**
+     * Get permission
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPermission()
+    {
+        return $this->permission;
+    }
 }
