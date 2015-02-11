@@ -3,3 +3,6 @@ myna65_elixir:
     type:     rest
     prefix:   /api
 
+NelmioApiDocbundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix: /api/doc
