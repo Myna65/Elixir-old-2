@@ -1,0 +1,5 @@
+myna65_elixir_relations:
+    resource: "@Myna65ElixirBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
