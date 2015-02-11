@@ -1,6 +1,6 @@
 <?php
 
-namespace Myna65\\ElixirBundle\\Entity;
+namespace Myna65\ElixirBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
