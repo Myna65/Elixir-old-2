@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('myna65_elixir_relations');
+        //$rootNode = $treeBuilder->root('myna65_elixir_relations');
 
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for
