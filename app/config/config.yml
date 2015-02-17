@@ -79,10 +79,16 @@ sensio_framework_extra:
     view: { annotations: false }
     
 fos_rest:
+    format_listener: true
+    routing_loader:
+        default_format: json
+        include_format: false
     body_converter:
         enabled: true
     view:
         view_response_listener: force
-    format_listener:
-        rules:
-            - { path: '^/api',  priorities: ['json' ,'xml', 'html'], fallback_format: json, prefer_extension: true }
+        formats:
+            xml: false
+            json: true
+        templating_formats:
+            html: false

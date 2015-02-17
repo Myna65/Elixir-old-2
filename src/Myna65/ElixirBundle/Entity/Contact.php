@@ -31,6 +31,7 @@ class Contact
     /**
      * @var \ContactType
      *
+     * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
      * @ORM\OneToOne(targetEntity="ContactType")
      * @ORM\JoinColumns({
@@ -103,7 +104,7 @@ class Contact
      * @param \Myna65\ElixirBundle\Entity\ContactType $contactType
      * @return Contact
      */
-    public function setContactType(\Myna65\ElixirBundle\Entity\ContactType $contactType = null)
+    public function setContactType(\Myna65\ElixirBundle\Entity\ContactType $contactType)
     {
         $this->contactType = $contactType;
 

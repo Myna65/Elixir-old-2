@@ -3,14 +3,16 @@
 <container xmlns="http://symfony.com/schema/dic/services"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+	
+	<parameters>
+		<parameter key="myna65_elixir.person.handler.class">Myna65\ElixirBundle\Handler\PersonHandler</parameter>
+		<parameter key="myna65_elixir.person.class">Myna65\ElixirBundle\Entity\Person</parameter>
+	</parameters>
 
-    <!--
     <services>
-        <service id="myna65_elixir_relations.example" class="Myna65\ElixirBundle\Example">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
+        <service id="myna65_elixir.person.handler" class="%myna65_elixir.person.handler.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument>%myna65_elixir.person.class%</argument>
         </service>
     </services>
-    -->
 </container>

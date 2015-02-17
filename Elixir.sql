@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `elixir`.`person` (
   `name` VARCHAR(45) NOT NULL,
   `surname` VARCHAR(45) NULL DEFAULT '',
   `vat_number` VARCHAR(20) NULL DEFAULT NULL,
-  `civility_id` INT NOT NULL,
+  `civility_id` INT NULL,
   `mandator_id` INT NULL,
   `comment` TEXT NULL,
   PRIMARY KEY (`id`),
@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `elixir`.`person` (
   `name` VARCHAR(45) NOT NULL,
   `surname` VARCHAR(45) NULL DEFAULT '',
   `vat_number` VARCHAR(20) NULL DEFAULT NULL,
-  `civility_id` INT NOT NULL,
+  `civility_id` INT NULL,
   `mandator_id` INT NULL,
   `comment` TEXT NULL,
   PRIMARY KEY (`id`),
@@ -253,7 +253,7 @@ ENGINE = InnoDB;
 -- Table `elixir`.`journal`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `elixir`.`journal` (
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `type` ENUM('cash','electronic','check') NOT NULL,
   `current_amount` DECIMAL NOT NULL,
   PRIMARY KEY (`id`))
@@ -288,11 +288,13 @@ ENGINE = InnoDB;
 -- Table `elixir`.`payement`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `elixir`.`payement` (
+  `id` INT NOT NULL AUTO_INCREMENT,
   `Document_id` INT NOT NULL,
   `journal_id` INT NOT NULL,
   `value` DECIMAL NOT NULL,
   `time` DATETIME NOT NULL,
   `comment` TEXT NULL,
+  PRIMARY KEY (`id`),
   INDEX `fk_document_has_journal_journal1_idx` (`journal_id` ASC),
   INDEX `fk_document_has_journal_document1_idx` (`Document_id` ASC),
   CONSTRAINT `fk_Document_has_journal_Document1`
@@ -313,8 +315,8 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `elixir`.`transfer` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `from_id` INT UNSIGNED NOT NULL,
-  `to_id` INT UNSIGNED NOT NULL,
+  `from_id` INT NOT NULL,
+  `to_id` INT NOT NULL,
   `amount` DECIMAL NOT NULL,
   `time` DATETIME NULL,
   `comment` TEXT NULL,
