@@ -1,0 +1,5 @@
+Myna65\ElixirBundle\Entity\Person:
+  properties:
+    name:
+      - NotBlank: ~
+      - NotNull: ~

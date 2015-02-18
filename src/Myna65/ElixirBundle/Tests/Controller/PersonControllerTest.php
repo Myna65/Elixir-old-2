@@ -39,6 +39,42 @@ class PersonControllerTest extends WebTestCase
 		$response = $this->client->getResponse();
 		$this->assertJsonResponse($response,404);
 	}
+	
+	public function testJsonPostPersonAction()
+	{
+		$this->client = static::createClient();
+		
+		$route = $this->getUrl('api_1_post_person');
+		
+		$this->client->request(
+						'POST',
+				 		$route,
+						array(),
+						array(),
+						array('Content-Type' => 'application/json'),
+						'{"name":"Mona","surname":"Lisa"}'
+				);
+		
+		$this->assertJsonResponse($this->client->getResponse(),201,false);
+	}
+	
+	public function testJsonPostPersonActionShouldReturn400WithBadParameters()
+	{
+		$this->client = static::createClient();
+	
+		$route = $this->getUrl('api_1_post_person');
+	
+		$this->client->request(
+				'POST',
+				$route,
+				array(),
+				array(),
+				array('Content-Type' => 'application/json'),
+				'{"surname":"Lisa"}'
+		);
+	
+		$this->assertJsonResponse($this->client->getResponse(),400,true);
+	}
 		
 	protected function assertJsonResponse(Response $response, $statusCode = 200, $checkValidJson = true, $contentType = 'application/json')
 	{
